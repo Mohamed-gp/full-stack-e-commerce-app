@@ -9,6 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       container: { center: true, padding: "2rem" },
+      colors: {
+        mainColor: "#00acff",
+      },
     },
   },
   plugins: [],
