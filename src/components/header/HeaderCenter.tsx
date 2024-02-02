@@ -12,7 +12,7 @@ export default function HeaderCenter() {
             className="w-[50px] pl-1 placeholder:text-[0px] focus:outline-none sm:w-[200px] sm:placeholder:text-sm md:w-[300px]"
             placeholder="Search for products"
           />
-          <button className="bg-black h-full rounded-r-xl px-3 py-2 text-sm text-[white] hover:opacity-90 duration-300">
+          <button className="bg-mainColor h-full rounded-r-xl px-3 py-2 text-sm text-[white] hover:opacity-90 duration-300">
             Search
           </button>
         </div>

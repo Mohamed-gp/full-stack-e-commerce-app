@@ -4,7 +4,7 @@ import { FaCartShopping } from "react-icons/fa6";
 export default function HeroProduct() {
   return (
     <div
-    className="container flex h-full w-[100vw] flex-col-reverse flex-wrap items-center justify-center gap-2 gap-y-6 py-12 lg:flex-row lg:justify-between"
+    className="relative container flex  w-[100vw] flex-col-reverse flex-wrap items-center justify-center gap-2 gap-y-6 py-12 lg:flex-row lg:justify-between h-full z-50"
     style={{ minHeight: "calc(100vh - 70.94px)" }}
   >
     <div className="w-full  text-center leading-loose lg:w-1/2 lg:text-left">
@@ -32,7 +32,7 @@ export default function HeroProduct() {
         <button className="bg-white w-[150px] rounded-lg px-3 py-1 text-[#201F20]">
           Read More
         </button>
-        <button className="bg-white  flex w-[150px] items-center gap-1 rounded-lg px-3 py-1 text-[#201F20]">
+        <button className="bg-mainColor   flex w-[150px] items-center gap-1 rounded-lg px-3 py-1 text-white">
           <p>Add To Cart</p>
           <FaCartShopping />
         </button>

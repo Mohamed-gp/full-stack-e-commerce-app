@@ -10,7 +10,14 @@ const config: Config = {
     extend: {
       container: { center: true, padding: "2rem" },
       colors: {
-        mainColor: "#00acff",
+        mainColor: "#8A33FD",
+        bgColorWhite : "#ECEBEC",
+        bgColorBlack : "#201F20",
+        bgColorDanger : "#EA4B48",
+        
+        // #8A33FD
+        // #00acff
+
       },
     },
   },

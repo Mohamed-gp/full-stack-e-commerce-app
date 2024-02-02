@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Provider } from "react-redux";
-import {store} from "../redux/store"
+import { store } from "../redux/store";
 import StoreProvider from "@/StoreProvider";
 import Header from "@/components/header/Header";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { AOSInit } from "@/Aos";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,14 +22,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-      <html lang="en">
-        <body className={`${inter.className} overflow-x-hidden`}>
-          <StoreProvider>
-            <Header/>
-            {children}
-          </StoreProvider>
-        </body>
-      </html>
+    <html lang="en">
+      <AOSInit/>
+      <body className={`${inter.className} overflow-x-hidden`}>
+        <StoreProvider>
+          <Header />
+          {children}
+          <ToastContainer />
+        </StoreProvider>
+      </body>
+    </html>
   );
 }
-
