@@ -6,6 +6,7 @@ import Phones from "@/components/phones/Phones";
 export default function Home() {
   return (
     <>
+    {/* disabled */}
       <Hero />
       <div className="bg-bgColorWhite">
         <NewArrivals />

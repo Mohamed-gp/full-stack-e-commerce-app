@@ -17,14 +17,14 @@ export default function HeroSlider({
   return (
     <div className="absolute w-[100vw] h-full">
       <button
-        className=" bg-white text-black absolute left-12 top-1/2 flex -translate-y-1/2 items-center justify-center rounded-full p-2 disabled:opacity-30 z-10"
+        className=" bg-white text-black absolute left-12 top-1/2 flex -translate-y-1/2 items-center justify-center rounded-full p-2 disabled:opacity-30 z-10 disabled:cursor-not-allowed"
         disabled={slideIndex === 0}
         onClick={() => setslideIndex(slideIndex - 1)}
       >
         <FaArrowLeft />
       </button>
       <button
-        className=" bg-white text-black absolute right-12 top-1/2 flex -translate-y-1/2 items-center justify-center rounded-full p-2 disabled:opacity-30 z-10"
+        className=" bg-white text-black absolute right-12 top-1/2 flex -translate-y-1/2 items-center justify-center rounded-full p-2 disabled:opacity-30 z-10 disabled:cursor-not-allowed"
         disabled={slideIndex === 2}
         onClick={() => setslideIndex(slideIndex + 1)}
       >

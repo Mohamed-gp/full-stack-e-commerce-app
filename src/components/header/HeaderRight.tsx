@@ -1,9 +1,7 @@
+"use client";
 import Link from "next/link";
-import {
-  FaCartShopping,
-  FaHeart,
-  FaUser,
-} from "react-icons/fa6";
+import { useRef } from "react";
+import { FaCartShopping, FaHeart, FaUser } from "react-icons/fa6";
 
 export default function HeaderRight() {
   return (
@@ -16,8 +14,8 @@ export default function HeaderRight() {
           <FaHeart />
         </Link>
       </div>
-      <Link href="/cart" className="md:text-xl ">
-        <FaCartShopping />
+      <Link href="/" className="md:text-xl">
+        <FaCartShopping className="cart-icon" />
       </Link>
     </div>
   );

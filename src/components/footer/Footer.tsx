@@ -33,10 +33,9 @@ export default function Footer() {
       <div className="container py-6 text-white flex justify-between">
         <p className="opacity-30 hover:opacity-100 duration-1000">SwiftBuy eCommerce © {new Date().getFullYear()}. All Rights Reserved</p>
         <div className="flex gap-2 text-3xl">
-            <Image src="/Method=Visa.png" alt="/Method=Visa.png" width={45} height={31.76}/>
-            <Image src="/Method=Mastercard.png" alt="Mastercard.png" width={45} height={31.76}/>
-            <Image src="/Method=Discover.png" alt="Discover.png" width={45} height={31.76}/>
-            <Image src="/Method=ApplePay.png" alt="ApplePay.png" width={45} height={31.76}/>
+            <Image src="/Method=Visa.png" alt="/Method=Visa.png" width={41.98} height={31.97}/>
+            <Image src="/Method=Mastercard.png" alt="Mastercard.png" width={40.97} height={38.97}/>
+            <Image src="/Method=ApplePay.png" alt="ApplePay.png" width={42.97} height={34.97}/>
         </div>
       </div>
     </footer>

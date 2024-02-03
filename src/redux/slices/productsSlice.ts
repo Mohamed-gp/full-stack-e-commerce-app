@@ -1,23 +1,27 @@
-import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
+import type { PayloadAction } from "@reduxjs/toolkit";
 
 export interface productsState {
-  products : any[]
+  products: boolean;
 }
 
 const initialState: productsState = {
-  products: [1,2,3,4],
-}
+  products: false,
+};
 
 export const productsSlice = createSlice({
-  name: 'products',
+  name: "products",
   initialState,
   reducers: {
-
+    setfalse(state, action) {
+      state.products = false;
+    },
+    settrue(state, action) {
+      state.products = true;
+    },
   },
-})
+});
 
-
-const productsReducer = productsSlice.reducer
-const productsAction = productsSlice.actions
-export {productsAction,productsReducer}
+const productsReducer = productsSlice.reducer;
+const productsAction = productsSlice.actions;
+export { productsAction, productsReducer };
