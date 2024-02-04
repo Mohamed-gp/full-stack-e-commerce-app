@@ -1,6 +1,5 @@
 import Hero from "@/components/Hero/Hero";
 import NewArrivals from "@/components/arrivals/NewArrivals";
-import Footer from "@/components/footer/Footer";
 import Phones from "@/components/phones/Phones";
 
 export default function Home() {
@@ -12,7 +11,7 @@ export default function Home() {
         <NewArrivals />
         <Phones/>
       </div>
-      <Footer/>
+      
     </>
   );
 }

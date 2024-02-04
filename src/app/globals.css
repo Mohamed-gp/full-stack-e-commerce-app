@@ -35,19 +35,20 @@
 /* styles/globals.css */
 .flying-img {
   position: absolute;
-  animation: fly_to_cart 2s ease-in-out;
-  -webkit-animation: fly_to_cart 2s ease-in-out;
+  animation: fly_to_cart 1.5s ease-in-out;
+  -webkit-animation: fly_to_cart 1.5s ease-in-out;
 }
 
 @keyframes fly_to_cart {
   0% {
-    left: 0;
-    top: 0;
+    left: 75px;
+    top: 40px;
+    z-index: 2333333333333333333333333;
   }
   100% {
-    left: calc(var(--left) + 40px);
-    top: var(--top);
+    z-index: 2333333333333333333333333;
+    left: calc(var(--left) + 40px + 75px);
+    top: calc(var(--top) + 40px);
     transform: scale(0.2);
   }
 }
-

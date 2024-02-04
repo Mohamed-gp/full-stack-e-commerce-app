@@ -14,8 +14,8 @@ export default function HeaderRight() {
           <FaHeart />
         </Link>
       </div>
-      <Link href="/" className="md:text-xl">
-        <FaCartShopping className="cart-icon" />
+      <Link href="/cart" className="cart-icon md:text-xl">
+        <FaCartShopping />
       </Link>
     </div>
   );

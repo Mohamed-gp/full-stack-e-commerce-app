@@ -8,6 +8,7 @@ import Header from "@/components/header/Header";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AOSInit } from "@/Aos";
+import Footer from "@/components/footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,11 +24,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <AOSInit/>
+      <AOSInit />
       <body className={`${inter.className} overflow-x-hidden`}>
         <StoreProvider>
           <Header />
           {children}
+          <Footer />
           <ToastContainer />
         </StoreProvider>
       </body>
