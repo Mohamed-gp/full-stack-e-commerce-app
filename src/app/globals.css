@@ -52,3 +52,22 @@
     transform: scale(0.2);
   }
 }
+
+th {
+  padding: 15px 0;
+}
+td {
+  padding: 20px 0;
+  text-align: center;
+}
+
+tbody tr::before {
+  content: "";
+  position: absolute;
+  background-color: red;
+  width: 200px;
+  height: 1px;
+  bottom: 0;
+  width: 90%;
+  left: 5%;
+}

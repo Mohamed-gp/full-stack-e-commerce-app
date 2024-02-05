@@ -4,6 +4,7 @@ import { FaCartShopping, FaHeart, FaRegHeart } from "react-icons/fa6";
 import RatingStars from "../ratingstars/RatingStars";
 import { useEffect, useRef, useState } from "react";
 import { toast } from "react-toastify";
+import Link from "next/link";
 
 export default function Product() {
   const [wishList, setwishList] = useState<boolean>(false);
@@ -107,9 +108,12 @@ export default function Product() {
               <p>Add To Cart</p>
               <FaCartShopping />
             </button>
-            <button className="w-[100px] rounded-lg bg-white px-1 py-1 text-[#201F20]">
+            <Link
+              href="/"
+              className="w-[100px] rounded-lg bg-white px-1 py-1 text-center text-[#201F20]"
+            >
               Read More
-            </button>
+            </Link>
           </div>
         </div>
       </div>
