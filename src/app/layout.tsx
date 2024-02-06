@@ -7,7 +7,7 @@ import StoreProvider from "@/StoreProvider";
 import Header from "@/components/header/Header";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { AOSInit } from "@/Aos";
+import { AOSInit } from "@/aos/Aos";
 import Footer from "@/components/footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
