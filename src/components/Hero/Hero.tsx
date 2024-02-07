@@ -1,13 +1,23 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaArrowLeft, FaArrowRight, FaCartShopping } from "react-icons/fa6";
 import HeroProduct from "./HeroProduct";
 import HeroSlider from "./HeroSlider";
 
+import axios from "axios";
+import { useSelector } from "react-redux";
+
+
 
 export default function Hero() {
+  const products = useSelector(state => state.products.products)
+  useEffect(() => {
+  
+  })
+
+
   const [slideIndex, setslideIndex] = useState<number>(0);
   return (
     <div className="Hero relative bg-bgColorBlack" style={{ minHeight: "calc(100vh - 70.94px)" }}>
