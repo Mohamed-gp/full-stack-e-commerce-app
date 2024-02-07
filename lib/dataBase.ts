@@ -7,8 +7,7 @@ export const connectToDb = async () => {
       // useNewUrlParser: true,
       // useUnifiedTopology: true,
     });
-
-    console.log("connected successful to Ecommerce Db");
+    console.log("connected successful to Ecommerce DB");
   } catch (error) {
     console.log("failed connectToDb", error);
   }

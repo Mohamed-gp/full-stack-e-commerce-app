@@ -1,32 +1,49 @@
 import mongoose from "mongoose";
 
-const userSchema = new mongoose.Schema(
+const productSchema = new mongoose.Schema(
   {
-    username: {
+    title: {
       type: String,
       required: true,
       trim: true,
       minlength: 5,
       maxlenght: 25,
     },
-    email: {
+    description: {
       type: String,
       required: true,
       trim: true,
-      unique: true,
       minlength: 5,
-      maxlenght: 25,
     },
-    password: {
-      trim: true,
-      type: String,
+    price: {
+      type: Number,
       required: true,
-      minlength : 8,
+      min: 0,
     },
+    discount: {
+      type: Number,
+      required: true,
+      min: 0,
+      max: 100,
+    },
+    rating: {
+      type: Number,
+      required: true,
+      min: 0,
+      max: 5,
+    },
+    reviews: {
+      type: Number,
+      required: true,
+      min: 0,
+    },
+    gallery:{
+      type: Array
+    }
   },
   { timestamps: true },
 );
 
-const User = mongoose.model("User", userSchema);
+const Product = mongoose.model("product", productSchema);
 
-export { User };
+export { Product };
