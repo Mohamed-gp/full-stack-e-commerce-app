@@ -7,20 +7,21 @@ import HeroProduct from "./HeroProduct";
 import HeroSlider from "./HeroSlider";
 
 import axios from "axios";
-import { useSelector } from "react-redux";
-
-
+import { GET } from "@/app/api/products/route";
+import { NextRequest } from "next/server";
 
 export default function Hero() {
-  const products = useSelector(state => state.products.products)
-  useEffect(() => {
-  
-  })
-
+  const [sss, setsss] = useState<any>();
+  useEffect((): any => {
+    data = GET()
+  }, []);
 
   const [slideIndex, setslideIndex] = useState<number>(0);
   return (
-    <div className="Hero relative bg-bgColorBlack" style={{ minHeight: "calc(100vh - 70.94px)" }}>
+    <div
+      className="Hero relative bg-bgColorBlack"
+      style={{ minHeight: "calc(100vh - 70.94px)" }}
+    >
       <HeroSlider slideIndex={slideIndex} setslideIndex={setslideIndex} />
       <div
         className="flex
@@ -31,7 +32,6 @@ export default function Hero() {
         <HeroProduct />
         <HeroProduct />
       </div>
-
     </div>
   );
 }

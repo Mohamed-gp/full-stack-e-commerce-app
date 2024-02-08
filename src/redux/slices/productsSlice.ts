@@ -1,9 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
-export interface productsState {
-  products: boolean;
+interface productsState {
+  products: productItem;
 }
+type productItem = any
+
 
 const initialState: productsState = {
   products: false,
