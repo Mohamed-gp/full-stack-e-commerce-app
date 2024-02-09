@@ -7,13 +7,15 @@ import HeroProduct from "./HeroProduct";
 import HeroSlider from "./HeroSlider";
 
 import axios from "axios";
-import { GET } from "@/app/api/products/route";
-import { NextRequest } from "next/server";
 
 export default function Hero() {
-  const [sss, setsss] = useState<any>();
+  const [products, setproducts] = useState<any>();
   useEffect((): any => {
-    data = GET()
+    const getData = async () => {
+      const { data } = await axios.get("http://localhost:3000/api/products")
+      console.log(data.message, "hello world");
+    };
+    getData();
   }, []);
 
   const [slideIndex, setslideIndex] = useState<number>(0);

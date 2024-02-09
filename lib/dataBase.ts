@@ -2,13 +2,9 @@ import mongoose from "mongoose";
 
 export const connectToDb = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI, {
-      // dbName: "share_prompt",
-      // useNewUrlParser: true,
-      // useUnifiedTopology: true,
-    });
+    await mongoose.connect("mongodb://127.0.0.1/Ecommerce");
     console.log("connected successful to Ecommerce DB");
   } catch (error) {
-    console.log("failed connectToDb", error);
+    console.log("failed to connect To Db", error);
   }
 };

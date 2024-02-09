@@ -3,12 +3,19 @@ import { connectToDb } from "../../../../lib/dataBase";
 import { Product } from "../../../../models/Product";
 
 
-export async function GET(request: Request) {
-  try {
-    connectToDb();
-    const products = await Product.find();
-    return NextResponse.json(products);
-  } catch (error: any) {
-    return NextResponse.json(error);
+export async function handler(req: Request) {
+  const {method} = req
+  connectToDb()
+  if (method === "GET") {
+    try {
+      const products = await Product.find()
+      return Response.json(products)
+    } catch (error) {
+      throw new Error("error in fetching ")
+    }
   }
 }
+
+
+
+
