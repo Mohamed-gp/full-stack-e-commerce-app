@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -9,26 +9,21 @@ import HeroSlider from "./HeroSlider";
 import axios from "axios";
 
 export default function Hero() {
-  const [products, setproducts] = useState<any>();
-  useEffect((): any => {
-    const getData = async () => {
-      const { data } = await axios.get("http://localhost:3000/api/products")
-      console.log(data.message, "hello world");
-    };
-    getData();
-  }, []);
+  axios.post("http://localhost:3000/api/products").then((response) => {
+    console.log(response.data);
+  });
 
-  const [slideIndex, setslideIndex] = useState<number>(0);
+  // const [slideIndex, setslideIndex] = useState<number>(0);
   return (
     <div
       className="Hero relative bg-bgColorBlack"
       style={{ minHeight: "calc(100vh - 70.94px)" }}
     >
-      <HeroSlider slideIndex={slideIndex} setslideIndex={setslideIndex} />
+      {/* <HeroSlider slideIndex={slideIndex} setslideIndex={setslideIndex} /> */}
       <div
         className="flex
          w-[300vw]  text-[white] duration-500"
-        style={{ transform: `translateX(${-100 * slideIndex}vw)` }}
+        // style={{ transform: `translateX(${-100 * slideIndex}vw)` }}
       >
         <HeroProduct />
         <HeroProduct />
