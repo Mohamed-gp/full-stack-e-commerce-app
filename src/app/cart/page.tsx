@@ -1,76 +1,187 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import { FaXmark } from "react-icons/fa6";
+import { FaArrowRight, FaTrash, FaXmark } from "react-icons/fa6";
 
 export default function page() {
   const [state, setstate] = useState<boolean>(true);
   return (
     <>
       {state ? (
-        <div>
-          <p className="my-6 text-center text-xl font-bold">My Shopping Cart</p>
-          <table className="mb-24 mt-12 w-screen ">
-            <thead className="bg-mainColor py-2 text-white">
-              <tr className="">
-                <th>Product Image</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Quanity</th>
-                <th>Subtotal</th>
-                <th className="">Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="relative">
-                <td>
-                  <div className="mx-auto w-fit">
-                    <Image
-                      src="/618d5bS2lUL._AC_SX466_-removebg-preview.png"
-                      alt="mac"
-                      width={100}
-                      height={100}
-                    />
+        <>
+          <div>
+            <p className="my-6 mt-12 text-center text-xl font-bold">
+              My Shopping Cart
+            </p>
+            <table className="mb-24 mt-12 w-screen ">
+              <thead className="bg-mainColor py-2 text-white">
+                <tr className="">
+                  <th>Product Image</th>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>Quanity</th>
+                  <th>Subtotal</th>
+                  <th className="">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="relative">
+                  <td>
+                    <div className="mx-auto w-fit">
+                      <Image
+                        src="/618d5bS2lUL._AC_SX466_-removebg-preview.png"
+                        alt="mac"
+                        width={100}
+                        height={100}
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <p>MacBook Pro 16</p>
+                  </td>
+                  <td>$3990</td>
+                  <td>2</td>
+                  <td>${3990 * 2}</td>
+                  <td>
+                    <div className="mx-auto w-fit cursor-pointer  text-bgColorDanger">
+                      <FaTrash />
+                    </div>
+                  </td>
+                </tr>
+                <tr className="relative">
+                  <td>
+                    <div className="mx-auto w-fit">
+                      <Image
+                        src="/618d5bS2lUL._AC_SX466_-removebg-preview.png"
+                        alt="mac"
+                        width={100}
+                        height={100}
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <p>MacBook Pro 16</p>
+                  </td>
+                  <td>$3990</td>
+                  <td>2</td>
+                  <td>${3990 * 2}</td>
+                  <td>
+                    <div className="mx-auto w-fit cursor-pointer  text-bgColorDanger">
+                      <FaTrash />
+                    </div>
+                  </td>
+                </tr>
+                <tr className="relative">
+                  <td>
+                    <div className="mx-auto w-fit">
+                      <Image
+                        src="/618d5bS2lUL._AC_SX466_-removebg-preview.png"
+                        alt="mac"
+                        width={100}
+                        height={100}
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <p>MacBook Pro 16</p>
+                  </td>
+                  <td>$3990</td>
+                  <td>2</td>
+                  <td>${3990 * 2}</td>
+                  <td>
+                    <div className=" mx-auto w-fit cursor-pointer text-bgColorDanger">
+                      <FaTrash />
+                    </div>
+                  </td>
+                </tr>
+                <tr className="relative">
+                  <td>
+                    <div className="flex items-center justify-center">
+                      <Image
+                        src="/618d5bS2lUL._AC_SX466_-removebg-preview.png"
+                        alt="mac"
+                        width={100}
+                        height={100}
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <p>MacBook Pro 16</p>
+                  </td>
+                  <td>$3990</td>
+                  <td>2</td>
+                  <td>${3990 * 2}</td>
+                  <td>
+                    <div className="mx-auto w-fit cursor-pointer text-bgColorDanger">
+                      <FaTrash />
+                    </div>
+                  </td>
+                </tr>
+                <tr className="relative">
+                  <td>
+                    <div className="mx-auto w-fit">
+                      <Image
+                        src="/618d5bS2lUL._AC_SX466_-removebg-preview.png"
+                        alt="mac"
+                        width={100}
+                        height={100}
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <p>MacBook Pro 16</p>
+                  </td>
+                  <td>$3990</td>
+                  <td>2</td>
+                  <td>${3990 * 2}</td>
+                  <td>
+                    <div className="mx-auto w-fit cursor-pointer text-bgColorDanger">
+                      <FaTrash />
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div className="bg-bgColorCartFooter py-6">
+            <div className="container my-6 flex justify-between ">
+              <div className="flex flex-col">
+                <p className="text-xl font-bold">Discount Codes</p>
+                <p className="opacity-60">
+                  Enter your coupon code if you have one
+                </p>
+                <div className="my-2 flex border-solid border-mainColor">
+                  <input
+                    placeholder="enter your coupon"
+                    className="rounded-l-xl py-2 pl-3 focus:outline-none"
+                    type="text"
+                  />
+                  <button className="rounded-r-xl bg-mainColor px-4 text-white">
+                    Apply Coupon
+                  </button>
+                </div>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <div className="flex flex-row gap-3">
+                  <div className="flex flex-col gap-2">
+                    <p>Sub Total </p>
+                    <p>Shipping</p>
+                    <p>Grand Total</p>
                   </div>
-                </td>
-                <td>
-                  <p>MacBook Pro 16</p>
-                </td>
-                <td>$3990</td>
-                <td>2</td>
-                <td>${3990 * 2}</td>
-                <td>
-                  <div className="mx-auto w-fit cursor-pointer text-3xl text-bgColorDanger">
-                    <FaXmark />
+                  <div className="flex flex-col gap-2">
+                    <p>$2012 </p>
+                    <p>Free</p>
+                    <p>$2012</p>
                   </div>
-                </td>
-              </tr>
-              <tr className="relative">
-                <td>
-                  <div className="mx-auto w-fit">
-                    <Image
-                      src="/618d5bS2lUL._AC_SX466_-removebg-preview.png"
-                      alt="mac"
-                      width={100}
-                      height={100}
-                    />
-                  </div>
-                </td>
-                <td>
-                  <p>MacBook Pro 16</p>
-                </td>
-                <td>$3990</td>
-                <td>2</td>
-                <td>${3990 * 2}</td>
-                <td>
-                  <div className="mx-auto w-fit cursor-pointer text-3xl text-bgColorDanger">
-                    <FaXmark />
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+                </div>
+                <button className="my-3 flex items-center gap-2 rounded-xl bg-mainColor px-3 py-2 text-sm text-white">
+                  <p>Proceed To Checkout</p>
+                  <FaArrowRight />
+                </button>
+              </div>
+            </div>
+          </div>
+        </>
       ) : (
         <>
           <div

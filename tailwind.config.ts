@@ -14,6 +14,7 @@ const config: Config = {
         bgColorWhite : "#ECEBEC",
         bgColorBlack : "#201F20",
         bgColorDanger : "#EA4B48",
+        bgColorCartFooter : "#F6F6F6",
         
         // #8A33FD
         // #00acff

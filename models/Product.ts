@@ -37,9 +37,9 @@ const productSchema = new mongoose.Schema(
       required: true,
       min: 0,
     },
-    gallery:{
-      type: Array
-    }
+    gallery: {
+      type: Array,
+    },
   },
   { timestamps: true },
 );
@@ -47,3 +47,4 @@ const productSchema = new mongoose.Schema(
 const Product = mongoose.model("product", productSchema);
 
 export { Product };
+// brand
