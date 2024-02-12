@@ -50,7 +50,7 @@ export default function Product() {
     setTimeout(() => {
       // target_parent.style.zIndex = "";
       target_parent.removeChild(flying_img);
-    }, 1500);
+    }, 1000);
   };
 
   return (

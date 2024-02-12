@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FaCartShopping } from "react-icons/fa6";
 
 export default function HeroProduct() {
@@ -29,9 +30,9 @@ export default function HeroProduct() {
           </p>
         </div>
         <div className="my-6 flex items-center justify-center gap-3 font-bold lg:justify-normal">
-          <button className="w-[150px] rounded-xl bg-white px-3 py-1 text-[#201F20]">
+          <Link href="/product" className="text-center w-[150px] rounded-xl bg-white px-3 py-1 text-[#201F20]">
             Read More
-          </button>
+          </Link>
           <button className="flex   w-[150px] items-center gap-1 rounded-xl bg-mainColor px-3 py-1 text-white">
             <p>Add To Cart</p>
             <FaCartShopping />

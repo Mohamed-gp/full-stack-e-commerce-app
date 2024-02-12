@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import { FaArrowRight, FaTrash, FaXmark } from "react-icons/fa6";
+import { FaArrowRight, FaRegHeart, FaTrash, FaXmark } from "react-icons/fa6";
 
 export default function page() {
   const [state, setstate] = useState<boolean>(false);
@@ -191,16 +191,16 @@ export default function page() {
             className="container flex flex-col  items-center justify-center py-14"
             style={{ minHeight: `calc(100vh - 70.94px)` }}
           >
-            <Image
-              src="/cart-empty-photo.png"
-              alt="cart-empty"
-              width={300}
-              height={300}
-            />
+            <div className="flex h-[130px] w-[130px] items-center justify-center rounded-full bg-[#F0F9F4]">
+              <FaRegHeart className="h-1/2 w-1/2 text-[#28A642]" />
+            </div>
             <p className="my-6 mb-2 text-3xl font-bold">
-              Your cart is empty and sad :(
+              Your wishlist is empty
             </p>
-            <p className="opacity-60">Add something to make it happy!</p>
+            <p className="opacity-60">
+              You don’t have any products in the wishlist yet. You will find a
+              lot of interesting products on our Shop page.
+            </p>
             <button className="mt-6 rounded-xl bg-mainColor px-6 py-2  text-white">
               Continue Shoping
             </button>
