@@ -55,6 +55,7 @@ export default function Product() {
 
   return (
     <>
+     {/* data-aos="fade-down" problem with adding to cart */}
       <div className="flex flex-col ">
         <div className="relative  flex h-[150px] w-[270px] items-center justify-center   rounded-t-xl bg-white">
           <Image
