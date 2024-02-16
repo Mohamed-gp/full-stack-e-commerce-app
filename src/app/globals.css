@@ -88,3 +88,19 @@ table tbody tr::after {
     left: 5px;
   }
 }
+
+.or-sign-up::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  background-color: black;
+  height: 1px;
+  opacity: 0.5;
+}
