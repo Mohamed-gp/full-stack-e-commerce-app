@@ -1,13 +1,37 @@
+"use client";
+import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { FaEyeSlash } from "react-icons/fa6";
+import { toast } from "react-toastify";
 
 const page = () => {
+  const [email, setemail] = useState<string>("");
+  const [password, setpassword] = useState<string>("");
+  const loginHandler = async (e) => {
+    e.preventDefault();
+    if (email.trim() == "") {
+      return toast.error("email Shouldn't be empty");
+    }
+    if (password.trim() == "") {
+      return toast.error("password Shouldn't be empty");
+    }
+    try {
+      axios.post("http://localhost:3000/api/auth/login", {
+        email: email,
+        password: password,
+      });
+      console.log(e);
+    } catch (error: any) {
+      return toast.error(error);
+    }
+  };
   return (
     <>
-      <div className="flex">
+      <div className="flex items-center justify-center">
         <div
-          className="h-full w-1/2"
+          className="hidden h-full w-1/2 md:block"
           style={{
             minHeight: "calc(100vh - 70.94px)",
             backgroundImage: `url(/${"purple-wallpaper-with-swirly-background.jpg"})`,
@@ -21,7 +45,7 @@ const page = () => {
             minHeight: "calc(100vh - 70.94px)",
             boxShadow: "rgb(255 255 255 / 30%) 0px 0px 74px 55px",
           }}
-          className="flex h-full w-1/2 flex-col  justify-center px-6"
+          className="flex h-full w-full flex-col justify-center  px-6 md:w-1/2"
         >
           <p className="text-xl font-bold">Sign In</p>
 
@@ -34,9 +58,13 @@ const page = () => {
               OR
             </span>
           </div>
-          <form action="" className="flex flex-col">
+          <form action="" className="flex flex-col" onSubmit={loginHandler}>
             <label htmlFor="email">Email : </label>
             <input
+              value={email}
+              onChange={(e) => {
+                setemail(e.target.value);
+              }}
               type="email"
               id="email"
               className="mb-2 mt-1 rounded-lg border-2 py-1 pl-2 focus:outline-none"
@@ -52,12 +80,19 @@ const page = () => {
             <input
               type="password"
               id="password"
+              value={password}
+              onChange={(e) => {
+                setpassword(e.target.value);
+              }}
               className="mb-2 mt-1 rounded-lg border-2 py-2 pl-2 focus:outline-none"
             />
             <span className="mb-2 mt-1 text-center text-bgColorDanger opacity-50">
               Use 8 or more characters with a mix of letters, numbers & symbols
             </span>
-            <button className="mx-auto w-fit rounded-xl bg-mainColor px-6 py-2 text-xl font-bold text-white">
+            <button
+              type="submit"
+              className="mx-auto w-fit rounded-xl bg-mainColor px-6 py-2 text-xl font-bold text-white"
+            >
               Sign Up
             </button>
             <div className="mt-2 flex items-center justify-center gap-2">

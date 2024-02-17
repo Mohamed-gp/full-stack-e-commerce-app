@@ -5,13 +5,13 @@ import { FaEyeSlash } from "react-icons/fa6";
 export default function page() {
   return (
     <>
-      <div className="flex">
+      <div className="flex items-center justify-center">
         <div
           style={{
             minHeight: "calc(100vh - 70.94px)",
             boxShadow: "rgb(255 255 255 / 30%) 0px 0px 74px 55px",
           }}
-          className="flex h-full w-1/2 flex-col  justify-center px-6"
+          className="flex h-full  w-auto flex-col justify-center  px-6 md:w-1/2"
         >
           <p className="text-xl font-bold">Sign Up</p>
           <p className="text-sm">
@@ -68,7 +68,7 @@ export default function page() {
           </form>
         </div>
         <div
-          className="h-full w-1/2"
+          className="hidden h-full w-1/2 md:block"
           style={{
             minHeight: "calc(100vh - 70.94px)",
             backgroundImage: `url(/${"purple-wallpaper-with-swirly-background.jpg"})`,

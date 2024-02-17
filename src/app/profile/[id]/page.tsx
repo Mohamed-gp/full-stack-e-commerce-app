@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FaDoorOpen } from "react-icons/fa6";
+import { FaDoorOpen, FaPersonWalkingArrowRight } from "react-icons/fa6";
 
 const page = () => {
   return (
@@ -94,9 +94,11 @@ const page = () => {
         </button>
       </div>
       <div className="flex items-center justify-end">
-        <button className="flex items-center gap-2 rounded-xl bg-mainColor px-6 py-2    text-white">
+        <button className="flex items-center gap-4 rounded-xl bg-mainColor px-6 py-2    text-white">
           Logout
-          <FaDoorOpen className="text-2xl" />
+          <span className="text-2xl">
+            <FaPersonWalkingArrowRight />
+          </span>
         </button>
       </div>
     </div>

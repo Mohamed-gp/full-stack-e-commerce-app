@@ -4,7 +4,7 @@ import { useState } from "react";
 import { FaArrowRight, FaTrash, FaXmark } from "react-icons/fa6";
 
 export default function page() {
-  const [state, setstate] = useState<boolean>(true);
+  const [state, setstate] = useState<boolean>(false);
   return (
     <>
       {state ? (
