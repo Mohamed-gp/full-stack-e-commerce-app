@@ -1,13 +1,11 @@
 import { NextRequest } from "next/server";
-import { connectToDb } from "../../../../lib/dataBase";
 import { User, verifyRegister } from "../../../../models/User";
 
 export async function POST(req: NextRequest) {
-  connectToDb();
   const body = await req.json();
-  const { error } = verifyRegister(body)
+  const { error } = verifyRegister(body);
   if (error) {
-    console.log("hello  ")
+    console.log("hello  ");
   }
   // const { error } = verifyRegister(body);
   // if (error) {
@@ -20,7 +18,6 @@ export async function POST(req: NextRequest) {
   return new Response("bata");
 }
 export async function GET(req: NextRequest) {
-  connectToDb();
   // const body = await req.json();
   // const { error } = verifyRegister(body);
   // if (error) {

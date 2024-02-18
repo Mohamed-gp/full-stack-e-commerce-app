@@ -1,3 +1,4 @@
+import connectDB from "@/lib/dataBase";
 import mongoose from "mongoose";
 
 const productSchema = new mongoose.Schema(
@@ -44,7 +45,9 @@ const productSchema = new mongoose.Schema(
   { timestamps: true },
 );
 
-const Product = mongoose.model("product", productSchema);
+const Product =
+  mongoose.models.product || mongoose.model("product", productSchema);
 
 export { Product };
 // brand
+connectDB()

@@ -1,6 +1,8 @@
-import mongoose from "mongoose";
 
-import * as joi from "joi";
+import mongoose from "mongoose";
+import joi from "joi";
+import connectDB from "@/lib/dataBase";
+import { user } from "../types/interfaces";
 
 const userSchema = new mongoose.Schema(
   {
@@ -9,7 +11,7 @@ const userSchema = new mongoose.Schema(
       required: true,
       trim: true,
       minlength: 5,
-      maxlenght: 25,
+      maxlength: 25, // Fixed typo here
     },
     email: {
       type: String,
@@ -17,7 +19,7 @@ const userSchema = new mongoose.Schema(
       trim: true,
       unique: true,
       minlength: 5,
-      maxlenght: 25,
+      maxlength: 25, // Fixed typo here
     },
     password: {
       trim: true,
@@ -29,15 +31,10 @@ const userSchema = new mongoose.Schema(
   { timestamps: true },
 );
 
-interface UserData {
-  username: string;
-  email: string;
-  password: string;
-}
 
-const verifyRegister = (obj : UserData) => {
-  console.log(typeof obj)
-  const Schema = joi.object<UserData>({
+
+const verifyRegister = (obj: user) => {
+  const Schema = joi.object<user>({
     username: joi.string().min(5).max(25).required().trim(),
     email: joi.string().min(5).max(25).required().trim(),
     password: joi.string().min(8).required().trim(),
@@ -45,5 +42,6 @@ const verifyRegister = (obj : UserData) => {
   return Schema.validate(obj);
 };
 
-const User = mongoose.model("user", userSchema);
+const User = mongoose.models.User || mongoose.model('User', userSchema);
 export { User, verifyRegister };
+connectDB()

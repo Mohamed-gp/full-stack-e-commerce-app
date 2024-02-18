@@ -1,3 +1,4 @@
+import connectDB from "@/lib/dataBase";
 import mongoose from "mongoose";
 
 const CommentModel = new mongoose.Schema(
@@ -7,13 +8,15 @@ const CommentModel = new mongoose.Schema(
       required: true,
     },
 
-    // to do stars => rating    
+    // to do stars => rating
   },
   {
     timestamps: true,
   },
 );
 
-const Comment = mongoose.model("comment", CommentModel);
+const Comment =
+  mongoose.models.comment || mongoose.model("comment", CommentModel);
 
 export { Comment };
+connectDB()
