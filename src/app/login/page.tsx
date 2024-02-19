@@ -18,13 +18,15 @@ const page = () => {
       return toast.error("password Shouldn't be empty");
     }
     try {
-      axios.post("http://localhost:3000/api/auth/login", {
+      const { data } = await axios.post("http://localhost:3000/auth/login", {
         email: email,
         password: password,
       });
-      console.log(e);
-    } catch (error: any) {
-      return toast.error(error);
+      console.log(data);
+      console.log("bata");
+    } catch (error) {
+      toast.error(error.response.data.message);
+      console.log(error.response.data.message);
     }
   };
   return (
@@ -93,7 +95,7 @@ const page = () => {
               type="submit"
               className="mx-auto w-fit rounded-xl bg-mainColor px-6 py-2 text-xl font-bold text-white"
             >
-              Sign Up
+              Sign In
             </button>
             <div className="mt-2 flex items-center justify-center gap-2">
               <p className="opacity-50">Don't Have An Account ? </p>
