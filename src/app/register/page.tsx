@@ -1,9 +1,10 @@
 "use client";
 import axios from "axios";
+import { signIn, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaEyeSlash } from "react-icons/fa6";
 import { toast } from "react-toastify";
 
@@ -11,7 +12,7 @@ export default function page() {
   const [username, setusername] = useState<string>("");
   const [email, setemail] = useState<string>("");
   const [password, setpassword] = useState<string>("");
-  const loginSubmit = async (e) => {
+  const submiteHandler = async (e) => {
     e.preventDefault();
     if (email.trim() == "") {
       return toast.error("email is required");
@@ -28,14 +29,17 @@ export default function page() {
         email,
         password,
       });
-      console.log(data)
-      const router = useRouter()
-      router.push("bata")
+      console.log(data);
     } catch (error) {
-      toast.error(error.response.data.message);
       console.log(error.response.data.message);
+      toast.error(error.response.data.message);
     }
   };
+
+  const { status, data, update } = useSession();
+  useEffect(() => {
+    console.log({ status, data, update });
+  }, [status, data, update]);
   return (
     <>
       <div className="flex items-center justify-center">
@@ -50,7 +54,10 @@ export default function page() {
           <p className="text-sm">
             Sign up for free to access to in any of our products{" "}
           </p>
-          <button className="my-2 flex w-full justify-center gap-2 rounded-xl   border-2 py-2 text-mainColor">
+          <button
+            onClick={() => signIn("google")}
+            className="my-2 flex w-full justify-center gap-2 rounded-xl   border-2 py-2 text-mainColor"
+          >
             <Image src="/Google.svg" alt="google" width={20} height={20} />
             <p>Continue With Google</p>
           </button>
@@ -59,7 +66,7 @@ export default function page() {
               OR
             </span>
           </div>
-          <form action="" className="flex flex-col" onSubmit={loginSubmit}>
+          <form action="" className="flex flex-col" onSubmit={submiteHandler}>
             <label htmlFor="username">Username : </label>
             <input
               value={username}

@@ -8,6 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AOSInit } from "@/aos/Aos";
 import Footer from "@/components/footer/Footer";
+import { NextAuthProvider } from "./next-auth-provider/Provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,12 +26,14 @@ export default function RootLayout({
     <html lang="en">
       <AOSInit />
       <body className={`${inter.className} overflow-x-hidden`}>
-        <StoreProvider>
-          <Header />
-          {children}
-          <Footer />
-          <ToastContainer />
-        </StoreProvider>
+        <NextAuthProvider>
+          <StoreProvider>
+            <Header />
+            {children}
+            <Footer />
+            <ToastContainer />
+          </StoreProvider>
+        </NextAuthProvider>
       </body>
     </html>
   );
