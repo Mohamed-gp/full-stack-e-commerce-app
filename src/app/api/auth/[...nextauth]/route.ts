@@ -30,6 +30,21 @@ export const authOptions = {
           console.log(error.response.data.message);
         }
       }
+      if (account.provider == "github") {
+        const { email, name } = user;
+        try {
+          const res = await fetch("http://localhost:3000/auth/register", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+          return user;
+        } catch (error) {
+          toast.error(error.response.data.message);
+          console.log(error.response.data.message);
+        }
+      }
     },
   },
 };
