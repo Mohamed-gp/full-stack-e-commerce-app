@@ -9,7 +9,7 @@ export async function POST(req: NextRequest) {
   const body = await req.json()
   await Product.create(body)
 
-  return new Response("hello post");
+  return NextResponse.json({message : "post created succefuly"},{status : 201});
 }
 
 
@@ -17,17 +17,17 @@ export async function POST(req: NextRequest) {
 export async function DELETE(req: Request) {
   const body = await req.json()
   const id = body.id
-  await Product.deleteOne(id)
-  
+  if (!id) {
+    return NextResponse.json({message : "post doensn't exist "},{status : 400})
+  }
+  await Product.deleteOne({_id : id})
 
 
-
-  return NextResponse.json({ data2,data3,bata ,dataall});
+  return NextResponse.json({ message : "post deleted succefuly"},{status : 200});
 }
 
 // GET
 export async function GET(req: NextRequest) {
   const data = Product.find({})
-
-  return NextResponse.json({data });
+  return NextResponse.json({data },{status : 200});
 }
