@@ -9,6 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { AOSInit } from "@/aos/Aos";
 import Footer from "@/components/footer/Footer";
 import { NextAuthProvider } from "./next-auth-provider/Provider";
+import connectDB from "@/lib/dataBase";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  connectDB()
   return (
     <html lang="en">
       <AOSInit />

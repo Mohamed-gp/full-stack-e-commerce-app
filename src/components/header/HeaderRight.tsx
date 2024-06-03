@@ -9,7 +9,7 @@ export default function HeaderRight() {
       <Link href="/profile/:id" className=" md:text-xl ">
         <FaUser />
       </Link>
-      <div className="border-r-2 py-2 pr-3">
+      <div className="border-r-2 py-2 pr-3 ">
         <Link href="/wishlist" className=" md:text-xl ">
           <FaHeart />
         </Link>

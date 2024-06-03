@@ -1,4 +1,3 @@
-
 import mongoose from "mongoose";
 import joi from "joi";
 import connectDB from "@/lib/dataBase";
@@ -27,15 +26,13 @@ const userSchema = new mongoose.Schema(
       required: true,
       minlength: 8,
     },
-        isAdmin: {
-      type : Boolean,
-      default : false
-    }
+    isAdmin: {
+      type: Boolean,
+      default: false,
+    },
   },
   { timestamps: true },
 );
-
-
 
 const verifyRegister = (obj: user) => {
   const Schema = joi.object<user>({
@@ -46,16 +43,15 @@ const verifyRegister = (obj: user) => {
   return Schema.validate(obj);
 };
 
-
-const verifyLogin = (obj:user) => {
+const verifyLogin = (obj: user) => {
   const Schema = joi.object<user>({
-    email : joi.string().min(5).max(25).required().trim(),
-    password : joi.string().min(8).required().trim()
-  })
+    email: joi.string().min(5).max(25).required().trim(),
+    password: joi.string().min(8).required().trim(),
+  });
 
-  return Schema.validate(obj)
-}
+  return Schema.validate(obj);
+};
 
-const User = mongoose.models.User || mongoose.model('User', userSchema);
-export { User, verifyRegister ,verifyLogin};
-connectDB()
+const User = mongoose.models.User || mongoose.model("User", userSchema);
+export { User, verifyRegister, verifyLogin };
+connectDB();

@@ -1,46 +1,20 @@
-// import mongoose from "mongoose";
-// import dotenv from "dotenv";
-// dotenv.config()
-
-// export const connectToDb = async () => {
-//   try {
-//     await mongoose.connect(process.env.MONGO_URI);
-//     console.log("connected successful to Ecommerce DB");
-//   } catch (error) {
-//     console.log("failed to connect To Db", error);
-//   }
-// };
-
 import mongoose from "mongoose";
 
-const DATABASE_URL = process.env.MONGO_URI;
 
-if (!DATABASE_URL) {
+if (!process.env.MONGODB_URI) {
   throw new Error("Please define the DATABASE_URL environment variable inside .env.local");
 }
 
-let cached = global.mongoose;
-
-if (!cached) {
-  cached = global.mongoose = { conn: null, promise: null };
-}
 
 async function connectDB() {
-  if (cached.conn) {
-    return cached.conn;
+  try {
+    mongoose.connect(process.env.MONGODB_URI as string)
+    console.log("connected successful to db");
+  } catch (error) {
+     if (process.env.envirenment == "developement") {
+       console.log(error)
+     }
   }
-
-  if (!cached.promise) {
-    const opts = {
-      bufferCommands: false,
-    };
-
-    cached.promise = mongoose.connect(DATABASE_URL, opts).then((mongoose) => {
-      return mongoose;
-    });
-  }
-  cached.conn = await cached.promise;
-  return cached.conn;
 }
 
 export default connectDB;
